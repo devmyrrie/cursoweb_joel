@@ -5,9 +5,21 @@ La convención para nombramiento  es _underscore case_ para todo tipo de archivo
    
 El wireframe para el sitio personal, se presenta a continuación:   
 
-![alt text](http://i.imgur.com/qzh03D4.jpg)   
+![alt text](http://i.imgur.com/9qruIGg.png)   
 
 ***
 
-La jerarquía de contenido que se usará es la misma  de la [página del curso](jeisson.ecci.ucr.ac.cr), es decir, se estructurará de la forma: xml, x(html), js, css, php.
+La jerarquía de contenido que se usará es la misma  de la [página del curso](jeisson.ecci.ucr.ac.cr), es decir, se estructurará de la forma:
+
+/
+	intro
+	xml
+	x(html)
+		/img	
+		/js
+		/css
+	js
+	css
+	php
+	img
  
