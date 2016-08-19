@@ -12,14 +12,14 @@ El wireframe para el sitio personal, se presenta a continuación:
 La jerarquía de contenido que se usará es la misma  de la [página del curso](jeisson.ecci.ucr.ac.cr), es decir, se estructurará de la forma:
 
 /  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	intro  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xml  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp	x(html)  
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	/img  	
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	/js  
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	/css  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	js  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	css  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	php  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	img  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	intro/   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xml/    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	x(html)/    
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	img/    	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	js/    
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	css/    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	js/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	css/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	php/   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	img/    
  
