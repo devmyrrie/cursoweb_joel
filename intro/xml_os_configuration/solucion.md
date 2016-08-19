@@ -4,5 +4,5 @@
 | Ventajas      | Desventajas   | 
 | ------------- |:-------------:| 
 |XML es más facil de leer | Es muy verboso (mucha info) | 
-|La sintaxis es muy  fácil, por lo que entender que hace alguna parte del documento de configuración es fácil   |   | 
+|La sintaxis es muy  fácil, por lo que entender que hace alguna parte del documento de configuración es fácil   | Cuando pasa algo, no se puede agregar lineas al documento XML, ya que la ultima linea tiene que cerrar el root del documento.| 
 |Soporta Unicode   | Puede ocupar más espacio en disco| 
