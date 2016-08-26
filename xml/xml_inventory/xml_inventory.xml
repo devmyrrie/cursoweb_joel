@@ -1,0 +1,57 @@
+<inventory>
+<engendro id="12">Larissita</engendro>
+
+	<building name="ECCI" asset ="fixed" state="good" condition="running" >
+	    <details>	
+		</details>
+		
+		<place name="Aula: IF305"  asset ="fixed" state="defective" condition="running"  >
+		
+			<details>
+				Tiene tres goteras.
+			</details>
+
+			<items>
+				<item name="Video_beam:VB7876" asset ="changing" state="good" condition="running" >
+					<details>						
+					</details>
+				</item>
+				
+				<item name="Escritorio: ET2345" asset ="changing" state="damaged" condition="idle">
+					<details>						
+					</details>
+					<responsables>
+						<refPersona ref="12"></refPersona>
+					</responsables>
+				</item>				
+			</items>
+			
+		</place>
+		
+		
+		<place name="Laboratorio IF104"  asset ="fixed" state="good" condition="running" >
+		
+			<details>
+			</details>
+
+			<items>
+				<item name="Video_beam:VB7876" asset ="changing" state="good" condition="running" >
+					<details>						
+					</details>
+				</item>
+				
+				<item name="Computadora: HP 3040" asset ="changing" state="good" condition="running">
+					<item name="Disco duro: WD234" asset="changing" state="damaged" condition ="running">
+						<details>
+						</details>
+					</item>
+					
+					<details>						
+					</details>
+				</item>				
+			</items>
+			
+		</place>
+		
+	</building>
+</inventory>
