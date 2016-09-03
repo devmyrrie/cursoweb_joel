@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <!DOCTYPE INVENTORY [
-<!ELEMENT building (responsables?, place*) >
-<!ELEMENT inventory (responsable+, building+) >
-<!ELEMENT responsable (name,charge,email?,id) >
-<!ELEMENT place (details?,responsables?,items?) >
-<!ELEMENT details (#PCDATA) >
-<!ELEMENT responsables (refResponsable+) >
-<!ELEMENT items (item+) >
-<!ELEMENT item (responsables?) >
+<!ELEMENT building (responsables, place*) > <!--The building must have  responsables and  many places -->
+<!ELEMENT inventory (responsable+, building+) > <!-- The inventory must have at least one responsable and building-->
+<!ELEMENT responsable (name,charge,email?,id) > <!-- The responsable must have a name, charge and id, and optionally one email -->
+<!ELEMENT place (details?,responsables?,items?) > <!-- The place has one or zero details, responsables and items -->
+<!ELEMENT details (#PCDATA) > <!-- Details must contain data-->
+<!ELEMENT responsables (refResponsable+) > <!--The element responsables must have at least one refResponsables -->
+<!ELEMENT items (item+) > <!-- Items can have many items, but must have at least one -->
+<!ELEMENT item (responsables?) > <!-- The item can have zero or one responsables -->
 
-<!ATTLIST responsable ID #REQUIRED>
-<!ATTLIST building (name|asset|state|condition) #REQUIRED>
-<!ATTLIST place (name|asset|state|condition) #REQUIRED>
-<!ATTLIST item (name|asset|state|condition) #REQUIRED>
+<!ATTLIST responsable ID #REQUIRED> <!-- Responsaables must have an id -->
+<!ATTLIST building (name|asset|state|condition) #REQUIRED> <!-- Building must have the set of attributos enclosed in parenthesis -->
+<!ATTLIST place (name|asset|state|condition) #REQUIRED> <!-- Place must have the set of attributos enclosed in parenthesis  -->
+<!ATTLIST item (name|asset|state|condition) #REQUIRED> <!-- item must have the set of attributos enclosed in parenthesis  -->
 ]>
