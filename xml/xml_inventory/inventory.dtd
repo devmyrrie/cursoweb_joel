@@ -1,5 +1,3 @@
-<?xml version="1.0" ?>
-<!DOCTYPE INVENTORY [
 <!ELEMENT building (responsables, place*) > <!--The building must have  responsables and  many places -->
 <!ELEMENT inventory (responsable+, building+) > <!-- The inventory must have at least one responsable and building-->
 <!ELEMENT responsable (name,charge,email?,id) > <!-- The responsable must have a name, charge and id, and optionally one email -->
@@ -9,28 +7,16 @@
 <!ELEMENT items (item+) > <!-- Items can have many items, but must have at least one -->
 <!ELEMENT item (responsables?) > <!-- The item can have zero or one responsables -->
 
-<!ATTLIST responsable ID #REQUIRED> <!-- Responsables must have an id -->
+<!ATTLIST responsable id ID #REQUIRED> <!-- Responsables must have an id -->
 
-<!ATTLIST building name CDATA #REQUIRED> <!-- Building must have the attribute name with text in it -->
-<!ATTLIST building asset (fixed|changing) #REQUIRED> <!-- The attribute asset   must have  a value of "fixed" or "changing" -->
-<!ATTLIST building state (defective|good|damaged) #REQUIRED> <!-- Building must have a attribute state  with value  (defective|good|damaged)  -->
-<!ATTLIST building condition (working|idle) #REQUIRED> <!-- Condition attribute must have a value working or idle -->
+<!ATTLIST building name CDATA #REQUIRED asset (fixed|changing) #REQUIRED
+state (defective|good|damaged) #REQUIRED condition (working|idle) #REQUIRED
+>
 
+<!ATTLIST place name CDATA #REQUIRED  asset (fixed|changing) #REQUIRED
+state (defective|good|damaged) #REQUIRED   condition (working|idle) #REQUIRED
+>
 
-<!ATTLIST place name CDATA #REQUIRED> <!-- place must have the attribute name with text in it -->
-<!ATTLIST place asset (fixed|changing) #REQUIRED> <!-- The attribute asset   must have  a value of "fixed" or "changing" -->
-<!ATTLIST place state (defective|good|damaged) #REQUIRED> <!-- place must have a attribute state  with value  (defective|good|damaged)  -->
-<!ATTLIST place condition (working|idle) #REQUIRED> <!-- Condition attribute must have a value working or idle -->
-
-
-<!ATTLIST item name CDATA #REQUIRED> <!-- item must have the attribute name with text in it -->
-<!ATTLIST item asset (fixed|changing) #REQUIRED> <!-- The attribute asset   must have  a value of "fixed" or "changing" -->
-<!ATTLIST item state (defective|good|damaged) #REQUIRED> <!-- item must have a attribute state  with value  (defective|good|damaged)  -->
-<!ATTLIST item condition (working|idle) #REQUIRED> <!-- Condition attribute must have a value working or idle -->
-
-
-
-
-
-
-]>
+<!ATTLIST item name CDATA #REQUIRED asset (fixed|changing) #REQUIRED
+state (defective|good|damaged)  #REQUIRED  condition (working|idle) #REQUIRED
+>
