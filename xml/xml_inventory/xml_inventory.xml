@@ -1,57 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE inventory SYSTEM "inventory.dtd">
 <inventory>
-<engendro id="12">Larissita</engendro>
-
-	<building name="ECCI" asset ="fixed" state="good" condition="running" >
-	    <details>	
-		</details>
-		
-		<place name="Aula: IF305"  asset ="fixed" state="defective" condition="running"  >
-		
-			<details>
+    <responsable id="1">
+        <name>Gabriela Barrantes.</name>
+        <charge>Directora</charge>
+        <email>gbarrantes@gmail.com</email>
+        <id>115800995</id>
+    </responsable>
+    <responsable id="2">
+        <name>Oscar Porras.</name>
+        <charge>Conserje</charge>
+        <id>115800933</id>
+    </responsable>
+    <responsable id="3">
+        <name>Alexis Cuña.</name>
+        <charge>Conserje</charge>
+        <id>215800933</id>
+    </responsable>
+    <responsable id="4">
+        <name>José Alfaro.</name>
+        <charge>Técnico</charge>
+        <email>gbarrantes@gmail.com</email>
+        <id>215800933</id>
+    </responsable>
+    <responsable id="5">
+        <name>Luis Loria.</name>
+        <charge>TI</charge>
+        <email>Loria@gmail.com</email>
+        <id>213400933</id>
+    </responsable>
+    <building name="ECCI" asset="fixed" state="good" condition="running">
+        <responsables>
+            <refResponsable ref="1"></refResponsable>
+        </responsables>
+        <place name="Aula: IF305" asset="fixed" state="defective" condition="running">
+            <details>
 				Tiene tres goteras.
-			</details>
-
-			<items>
-				<item name="Video_beam:VB7876" asset ="changing" state="good" condition="running" >
-					<details>						
 					</details>
-				</item>
-				
-				<item name="Escritorio: ET2345" asset ="changing" state="damaged" condition="idle">
-					<details>						
-					</details>
-					<responsables>
-						<refPersona ref="12"></refPersona>
-					</responsables>
-				</item>				
-			</items>
-			
-		</place>
-		
-		
-		<place name="Laboratorio IF104"  asset ="fixed" state="good" condition="running" >
-		
-			<details>
-			</details>
-
-			<items>
-				<item name="Video_beam:VB7876" asset ="changing" state="good" condition="running" >
-					<details>						
-					</details>
-				</item>
-				
-				<item name="Computadora: HP 3040" asset ="changing" state="good" condition="running">
-					<item name="Disco duro: WD234" asset="changing" state="damaged" condition ="running">
-						<details>
-						</details>
-					</item>
-					
-					<details>						
-					</details>
-				</item>				
-			</items>
-			
-		</place>
-		
-	</building>
+            <responsables>
+                <refResponsable ref="2"></refResponsable>
+            </responsables>
+            <items>
+                <item name="Video_beam:VB7876" asset="changing" state="good" condition="running">
+                    <responsables>
+                        <refResponsable ref="4"></refResponsable>
+                    </responsables>
+                </item>
+                <item name="Escritorio: ET2345" asset="changing" state="damaged" condition="idle">
+                    <responsables>
+                        <refResponsable ref="3"></refResponsable>
+                    </responsables>
+                </item>
+            </items>
+        </place>
+        <place name="Laboratorio IF104" asset="fixed" state="good" condition="running">
+            <responsables>
+                <refResponsable ref="4"></refResponsable>
+            </responsables>
+            <items>
+                <item name="Video_beam:VB7876" asset="changing" state="good" condition="running"></item>
+                <item name="Computadora: HP 3040" asset="changing" state="good" condition="running">
+                    <responsables>
+                        <refResponsable ref="5"></refResponsable>
+                    </responsables>
+                    <item name="Disco duro: WD234" asset="changing" state="damaged" condition="running"></item>
+                </item>
+            </items>
+        </place>
+    </building>
 </inventory>

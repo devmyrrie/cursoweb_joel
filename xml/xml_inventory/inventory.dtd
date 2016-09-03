@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE INVENTORY [
+<!ELEMENT building (responsables?, place*) >
+<!ELEMENT inventory (responsable+, building+) >
+<!ELEMENT responsable (name,charge,email?,id) >
+<!ELEMENT place (details?,responsables?,items?) >
+<!ELEMENT details (#PCDATA) >
+<!ELEMENT responsables (refResponsable+) >
+<!ELEMENT items (item+) >
+<!ELEMENT item (responsables?) >
+
+<!ATTLIST responsable ID #REQUIRED>
+<!ATTLIST building (name|asset|state|condition) #REQUIRED>
+<!ATTLIST place (name|asset|state|condition) #REQUIRED>
+<!ATTLIST item (name|asset|state|condition) #REQUIRED>
+]>
