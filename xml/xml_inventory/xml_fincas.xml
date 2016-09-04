@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE inventory SYSTEM "inventory.dtd">
+<inventory>
+<responsable id="_1">
+    <name>Ramiro Jimenez.</name>
+    <charge>Encargado</charge>
+    <email>rjexam@gmail.com</email>
+    <id>16345995</id>
+
+</responsable>
+<responsable id="_2">
+    <name>Mauricio Murrillo.</name>
+    <charge>Chofer</charge>
+    <id>1145300995</id>
+    <phone>2222222</phone>
+
+</responsable>
+<responsable id="_3">
+    <name>Dionisio Vega.</name>
+    <charge>Mecanica</charge>
+    <email>dionisio@gmail.com</email>
+    <id>356800933</id>
+
+</responsable>
+
+<responsable id="_4">
+    <name>Amelia Salas.</name>
+    <charge>Chofer</charge>
+    <id>34550933</id>
+    <phone>253685296</phone>
+
+</responsable>
+
+<place name="Finca Lagunilla" asset="fixed" state="good" condition="working">
+    <items>
+      <item name="Autobus: SJ1791" asset="fixed" state="damaged" condition= "working">
+        <details>
+            Chocó con el tren.
+        </details>
+            <item name="Motor:MT2450" asset="fixed" state="good" condition="idle">
+            </item>
+            <item name="Carroceria: CT20021" asset="fixed" state="damaged" condition="idle">
+                <details>
+                    Mas de 2.5 lata arrugada + puerta trasera
+                </details>
+            </item>
+      </item>
+    </items>
+</place>
+
+
+<place name="Finca Rio Azul" asset="fixed" state="defective" condition="working">
+    <items>
+      <item name="Buseta: SJ8509" asset="fixed" state="good" condition= "working">
+            <item name="Abanico: ABN013" asset="changing" state="good" condition="working">
+            </item>
+            <item name="Gato hidraulico: GHM8310" asset="changing" state="damaged" condition="idle">
+                <details>
+                    Está en garantía.
+                </details>
+            </item>
+      </item>
+    </items>
+</place>
+
+
+
+</inventory>
