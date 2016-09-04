@@ -40,3 +40,5 @@
                  >
 
 <!ATTLIST req ref IDREF #REQUIRED  >
+
+<!-- No se puede desnormalizar group, ya que los cursos y otra info se repitirian demasiado-->
