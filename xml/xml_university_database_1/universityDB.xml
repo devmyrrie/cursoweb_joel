@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE university SYSTEM "university.dtd">
+
+<university>
+
+  <students>
+    <student studentCard="a45891" averageGrade="7.14">
+      <name>Eliecer Montero</name>
+      <enrollment>
+        <courseEnrolled ref="CI-1101" groupNum="4"></courseEnrolled>
+        <courseEnrolled ref="CI-1320" groupNum="1"></courseEnrolled>
+      </enrollment>
+    </student>
+    <student studentCard="a98765" averageGrade="8.96">
+      <name>Yanet Arias</name>
+      <enrollment>
+        <courseEnrolled ref="CI-1320" groupNum="1"></courseEnrolled>
+      </enrollment>
+    </student>
+    <student studentCard="b10976" averageGrade="8.30">
+      <name>Anais Solano</name>
+      <enrollment>
+        <courseEnrolled ref="CI-2413" groupNum="1"></courseEnrolled>
+      </enrollment>
+    </student>
+  </students>
+
+  <professors>
+    <professor id="_109830876">Edgar Casasola</professor>
+    <professor id="_135900821">Francisco Arroyo</professor>
+    <professor id="_110101101">Jeisson Hidalgo</professor>
+    <professor id="_208431187">Maureen Murillo</professor>
+  </professors>
+
+  <group>
+    <courseGroup  refCourse="CI-1101" semester="1" annio="2011">
+      <numGroup groupNum="4"  schedule="KV13-15" classroom="301-IF"  refProf="_109830876"></numGroup>
+      <numGroup groupNum="8"  schedule="KV07-09" classroom="304-IF"  refProf="_208431187"></numGroup>
+    </courseGroup>
+
+    <courseGroup  refCourse="CI-1320" semester="1" annio="2011">
+      <numGroup groupNum="1"  schedule="KV17-19" classroom="303-IF"  refProf="_135900821"></numGroup>
+    </courseGroup>
+
+    <courseGroup  refCourse="CI-2413" semester="1" annio="2011">
+      <numGroup groupNum="1"  schedule="KV15-17" classroom="305-IF"  refProf="_110101101"></numGroup>
+    </courseGroup>
+  </group>
+
+  <courses>
+  <course id="CI-1101" credits="4">
+      <name>Programación I</name>
+  </course>
+  <course id="CI-1201" credits="4">
+    <reqs>
+      <req ref="CI-1101"></req>
+    </reqs>
+    <name>Programación II</name>
+  </course>
+  <course id="CI-1320" credits="5">
+      <name>Redes de computadoras I</name>
+  </course>
+  <course id="CI-2413" credits="4">
+    <reqs>
+      <req ref="CI-1201"></req>
+      <req ref="CI-1320"></req>
+    </reqs>
+    <name>Desarrollo de aplicaciones web</name>
+  </course>
+  </courses>
+
+</university>
