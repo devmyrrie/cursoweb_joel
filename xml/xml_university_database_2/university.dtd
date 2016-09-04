@@ -22,6 +22,7 @@
                          groupNum CDATA #REQUIRED
 >
 
+
 <!ATTLIST professor id ID #REQUIRED>
 
 <!ATTLIST courseGroup refCourse IDREF #REQUIRED
