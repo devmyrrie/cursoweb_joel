@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"></meta>
+        <title>Conversion de html a xhtml</title>
+      </head>
+
+      <body>
+        <h1>Conversión HTML a XHTML</h1>
+        <ol>
+           <li>Cambie todos los identificadores a minúsculas.</li>
+           <li>Asegúrese de que todos los elementos estén cerrados.</li>
+           <li>Agregue comillas a todos los valores de atributos.<br></br>
+              Si hay atributos minimizados, repita su valor entre comillas.</li>
+           <li>Agregue los elementos <code>html</code>, <code>head</code> y
+              <code>body</code> si no lo están.</li>
+        </ol>
+
+        <hr></hr>
+
+        <h1>Conversión XHTML a HTML</h1>
+        <ol>
+           <li>No cierre los elementos que se componen de sólo una etiqueta:
+              <code>img</code>, <code>CODE</code>, <code>hr</code>, ...
+            </li>
+           <li>Si las hay, elimine las secciones CDATA y convierta los
+              caracteres especiales en sus respectivas referencias de entidad.
+          </li>
+        </ol>
+        <hr></hr>
+        <p><button>Cerrar</button></p>
+
+      </body>
+      </html>
