@@ -1,41 +1,150 @@
- p, address
- {
-	 font-family: sans-serif;
- }
- 
- 
-#header_logo{
-	float:left;
-	margin-left:2em;
-	margin-right:2em;
-	margin-bottom:2em;
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #666;
+    padding: 0.2em 2em;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+article hr{
+  margin: 3em 0;
+}
+.quote {
+    margin-top: 2em;
+    /*It separates by  a margin of 2em the previous content*/
+}
+
+p, blockquote footer{
+  font-size: large;
+  text-align: justify;
+  opacity: 0.68; /*Lets make the font color a little bit lighter with the opacity attribute*/
+}
+blockquote > p,
+blockquote > footer {
+    /*Inside a quote, the p and footer*/
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+.active {
+    background-color: #4CAF50; /* When tab is active, background changes to green*/
+}
+article {
+    padding: 4em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.separator{
+  margin: 0 1em;
+  display:inline;
+
+}
+.center{
+  display: block;
+  margin: 0 auto;
+}
+
+.center-div{
+  display: block;
+  margin: 0 auto;
 }
 
 
-
-#profile_pic{	
+.content_entry{
 }
+
+section {
+  display:inline-block;
+margin: 0 auto;
+
+}
+
+#profile_pic {
+    /*Makes my profile picture circled (original image must be squared)*/
+    border-radius: 50%;
+    /*Center my image*/
+    margin-bottom: 2.5em;
+    /*transitions allows you to change property values smoothly (from one value to another),
+     over a given duration.*/
+    transition: 0.3s;
+
+}
+.opacate:hover{
+  opacity:0.8; /*When image is hover, change opacity to lighter*/
+  transition: 0.3s;
+}
+
 
 
 header nav ul {
     list-style-type: none;
+    /*Get rid of list bullets*/
+    font-size: large;
+
     margin: 0;
+    /*No margin nor padding*/
+
     padding: 0;
-    overflow: auto; /*When we float li to the left, it makes the ul have 0 height, and with no heigh it cannot show its elements so we must overflow it*/
-    background-color: #333;
+    overflow: auto;
+    /*When we float "li" to the left, it makes the ul have 0 height,
+                      and with no heigh it cannot show its elements so we must overflow it*/
+
+    background-color: #373A3C;
+    /*Back ground of list*/
+}
+a {
+    text-decoration: none;
+    /*Get rid of line beneath the link*/
+
+    color: #6DA0CC;
+    transition: 0.3s;
+
 }
 
 header nav li a {
-    display:block;
-    color: white;
+    display: block;
+    color: #898A8C;
+    /*The link of the list is gonna be #898A8C*/
+
     text-align: center;
-    padding: 14px 16px;
+    /*Center of the space*/
+
+    padding: 1em 1em;
     text-decoration: none;
-}
-header nav li a:hover {
-    background-color: #111;
+    /*Get rid of line beneath the link*/
 }
 
-header nav li {
-	float:left;
+
+/*A CUAL DE ESTOS LE HACE CAS0 ?????? A HOVER???*/
+a:hover:not(li a) {
+    color: #23527c;
+}
+
+header nav li a:hover {
+    /*When hovered it changes the background color to black*/
+    color:white;
+}
+
+header nav li:not(#home) {
+    float: right;
+    /*Let's display the list not vertically
+              but horizontally and to the right, so we must float li to the right, not includning home, since
+              home is gonna be in the left side of the navbar*/
+}
+
+
+#home{
+    float: left;
+    /*Home li will be display in the left side of the navbar*/
+    padding-left: 2em;
+
+}
+
+#home a{
+  color:white;
 }
