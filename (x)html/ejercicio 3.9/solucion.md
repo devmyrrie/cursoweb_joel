@@ -16,4 +16,4 @@
   Verdadero. <br> es preferido pero <br/> y <br /> son validos.
 
 6. Lo anterior también se cumple para los elementos hr, img y meta.
-  Verdadero.
+  Verdadero. Pero hay que recordad que en XHTML deben cerrarse todas las etiquetas. Por lo tanto <br> sola no es valida.
