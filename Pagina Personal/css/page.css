@@ -95,6 +95,7 @@ header nav ul {
                       and with no heigh it cannot show its elements so we must overflow it*/
 
     background-color: #373A3C;
+    opacity: 0.86;
     /*Back ground of list*/
 }
 a {
