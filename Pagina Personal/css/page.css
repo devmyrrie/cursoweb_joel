@@ -136,6 +136,7 @@ header nav li:not(#home) {
     /*Let's display the list not vertically
               but horizontally and to the right, so we must float li to the right, not includning home, since
               home is gonna be in the left side of the navbar*/
+
 }
 
 
