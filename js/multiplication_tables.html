@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		h1{	
+			text-align:center;
+		}
+		table, th, td {
+		    border: 1px solid black;
+			text-align:center;
+			margin: 3em auto;
+			width: 58em;
+		}
+		
+		th {
+			background-color: #FF99CC;
+		}
+		td {
+			background-color: #CC99ff;
+		}
+	</style>
+</head>
+<body>
+
+   <h1>Tablas de multiplicar</h1>
+   <script type="text/javascript">
+      document.write('<table >');
+      for ( var n=0; n <= 20; ++n ){
+	  		 	document.write('<tr>');
+
+         for(var j=0; j <= 20; ++j){
+		 
+			if( n == 0 && j == 0 ){
+				document.write('<th > X </th>\n');
+			}else{
+			if(j==0){
+				document.write('<th>', n,'</th>');
+			}else{//n==0 j != 0
+				if(n!=0 && j !=0){
+					document.write('<td>', j*n,'</td>');
+				}else{ //n == 0
+					document.write('<th>', j,'</th>');
+				}
+			}
+			
+			}
+			
+		 }
+		 	document.write('</tr>');
+		 
+		}
+      document.write('</table>');
+   </script>
+      <h1>Potencias</h1>
+
+     <script type="text/javascript">
+      document.write('<table >');
+      for ( var n=0; n <= 20; ++n ){
+	  		 	document.write('<tr>');
+
+         for(var j=0; j <= 10; ++j){
+		 
+			if( n == 0 && j == 0 ){
+				document.write('<th > ^ </th>\n');
+			}else{
+			if(j==0){
+				document.write('<th>', n,'</th>');
+			}else{//n==0 j != 0
+				if(n!=0 && j !=0){
+					document.write('<td>', Math.pow(n, j),'</td>');
+				}else{ //n == 0
+					document.write('<th>', j,'</th>');
+				}
+			}
+			
+			}
+			
+		 }
+		 	document.write('</tr>');
+		 
+		}
+      document.write('</table>');
+   </script>
+   
+</body>
+</html>
