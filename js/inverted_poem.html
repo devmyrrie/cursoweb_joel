@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript constants</title>
+<style>
+.divider{
+    display:block;
+
+}
+hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+.order{
+  display:inline-block;
+  margin: 0 2em 0 4em;
+  font-size: 4em;
+
+
+}
+p{
+  display:inline-block;
+
+}
+
+</style>
+</head>
+
+<script>
+
+  var poem = "I thought that I was free but it is not true \n  A wall stands in my way to freedom. Bricks, stones…\n Masonry patterns… Maybe so are the trees and rivers\nColumbs and dams: walls of obstacles\n Barries, impediments, burlesque fortresses\n\nAs a landscape winter fills my view with snow\n The silent wind forms a wall in front my eyes!\nAnd then nothingness, death´s song is constant\n Time singing of death… A wall stands, no news\n No writing of graffiti… The flat, horizontal flame\n\n My heart is broken. My feet are without shoes\nAnd my hands are without flesh\n There is no food so that I can´t dream\n The wall has no doors to escape through\n Can I cross the insipid matter?\n I am alone and free but still the wall stands in my way\nAnd Is anybody there, hearing me on the other side of my wall?\n ";
+  var poem1 = "<div class = 'divider'><span class = 'order'></span><p>"+poem.replace(/\n\n/g,"</p> </div> <div class = 'divider'><span class = 'order'></span><p>")+"</p></div><span class = 'separator'></span>"; //\</\>
+   poem1 = poem1.replace(/\n/g,"</br>");
+   //Escribir numeros
+   document.write(poem1+"<hr id='reversed'>");
+
+   var list = 	document.getElementsByClassName("order");
+
+      for(var i = 0; i < list.length ; ++i){
+               list[i].innerText += i;
+      }
+      var listDivs= document.getElementsByClassName('divider');
+      var e = document.getElementById("reversed");
+      for(var i =0 ; i < 3 ; ++i){
+
+        e.insertAdjacentHTML('afterend',listDivs[i].outerHTML);
+      }
+
+</script>
+<body>
+
+</body>
+
+</html>
