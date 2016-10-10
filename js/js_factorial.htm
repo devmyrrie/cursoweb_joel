@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Factorial</title>
+<style>
+  h1{
+    text-align:center;
+  }
+</style>
+</head>
+
+<body>
+<h2>Javascript factorial</h2>
+<script>
+var memo = { 0:1, 1:1};
+var fact = function(x){
+  if(memo.hasOwnProperty(x)){
+    return memo[x];
+  }else{
+      if(memo.hasOwnProperty(x-1)){
+        memo[x] = memo[x-1]*x;
+        return memo[x];
+      }else{
+        memo[x]=fact(x-1)*x;
+        return memo[x];
+      }
+
+  }
+}
+var i = 0 ;
+while(i < 20){
+  document.write("<p>"+fact(i)+ "<br />");
+  document.write("</p>");
+++i;
+}
+</script>
+</table>
+</body>
+
+</html>
