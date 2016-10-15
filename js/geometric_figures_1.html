@@ -29,25 +29,29 @@
 <body>
 <h2>Geometric</h2>
 <script>
+function crearCirculo(){
+  var circulo = {
+      type:"Circle",
+      x : Math.floor(Math.random() * 100),
+      y : Math.floor(Math.random() * 100),
+      r : Math.floor(Math.random() * 100),
+      perimeter: function(){
 
-var circulo = {
-    type:"Circle",
-    x : Math.floor(Math.random() * 100),
-    y : Math.floor(Math.random() * 100),
-    r : Math.floor(Math.random() * 100),
-    perimeter: function(){
+        return 2*Math.PI * this.r;
+      },
+      area: function(){
+        return this.r*this.r*Math.PI;
 
-      return 2*Math.PI * this.r;
-    },
-    area: function(){
-      return this.r*this.r*Math.PI;
+      },
+      printPosicion: function(){
+        return "<tr> <td> Circulo </td> <td> centro("+this.x+","+this.y+") radio: ("+this.x+","+this.y+")</td><td>"+
+            circulo.perimeter()+"</td><td>"+circulo.area()+"</td></tr>";
 
-    },
-    printPosicion: function(){
-      return "centro("+this.x+","+this.y+") radio:"+"("+this.x+","+this.y+")";
+      }
+  };
+  return circulo;
+}
 
-    }
-};
 function crearTriangulo(){
 var triangulo  =  {
   type: "Triangle",
@@ -68,16 +72,17 @@ var triangulo  =  {
     return perimetro;
   },
   printPosicion : function(){
-    return  "A("+this.verticeA.x+","+this.verticeA.y+") "+"B("+this.verticeB.x+","+this.verticeB.y+") "
-            +"C("+this.verticeC.x+","+this.verticeC.y+")";
+    return  "<tr><td>Triangulo</td>" +"<td>A("+this.verticeA.x+","+this.verticeA.y+") "+
+            "B("+this.verticeB.x+","+this.verticeB.y+") "+"C("+this.verticeC.x+","+this.verticeC.y+")"
+             +"</td><td>" + this.perimeter() + "</td>" + "<td>" + this.area() + "</td></tr>";
 
   }
 };
 
 return triangulo;
 }
-var triangulo = crearTriangulo();
-var otroTriangulo = crearTriangulo();
+
+function crearRectangulo(){
 var rectangulo = {
   type: "Rectangle",
   topLeft : {
@@ -95,23 +100,44 @@ var rectangulo = {
   },
 
   printPosicion : function(){
-      return  "width: " + this.width + " height: "+ this.height+ "top-left ("+ this.topLeft.x+
-      ","+this.topLeft.y+")";
+      return  "<tr><td>Rectangulo</td><td>width: " + this.width + " height: "+ this.height+ "top-left ("+ this.topLeft.x+
+","+this.topLeft.y+")" +"</td><td>" + rectangulo.perimeter() + "</td><td>" + rectangulo.area() + "</td></tr>"
+
   }
 };
-document.write("<table><tr><th>Figura</th><th>Dimensiones</th><th>Perímetro</th> <th>Área</th></tr>");
-var trianguloRow2 = "<tr><td>Triangulo</td><td>" +otroTriangulo.printPosicion() +"</td>"+
-                                        "<td>" + otroTriangulo.perimeter() + "</td>" + "<td>" + otroTriangulo.area() + "</td></tr>";
-var circuloRow = "<tr> <td> Circulo </td> <td>" + circulo.printPosicion() + "</td><td>"+
-                    circulo.perimeter()+"</td><td>"+circulo.area()+"</td></tr>";
-var rectanguloRow = "<tr><td>Rectangulo</td><td>" +rectangulo.printPosicion() +"</td>"+
-                    "<td>" + rectangulo.perimeter() + "</td>" + "<td>" + rectangulo.area() + "</td></tr>";
+return rectangulo;
+}
 
-document.write("<tr><td>Triangulo</td><td>",triangulo.printPosicion(),"</td><td>",triangulo.perimeter(),
-                "</td><td>",triangulo.area(),"</td></tr>");
-document.write(trianguloRow2);
-document.write(circuloRow);
-document.write(rectanguloRow);
+document.write("<table><tr><th>Figura</th><th>Dimensiones</th><th>Perímetro</th> <th>Área</th></tr>");
+
+var triangulo = crearTriangulo();
+var otroTriangulo = crearTriangulo();
+var rectangulo = crearRectangulo();
+var circulo = crearCirculo();
+var arregloFiguras = [triangulo,otroTriangulo,rectangulo,circulo];
+
+function escribirADoc(figura){
+  document.write(figura.printPosicion());
+}
+
+function getFigura(){
+      var i =Math.random();
+      if(i < 0.3){
+        return crearCirculo();
+      }else {
+        if(i < 0.6){
+          return crearTriangulo();
+        }else{
+          return crearRectangulo();
+        }
+      }
+}
+arregloFiguras =[];
+ for(var i = 0 ; i < 20; ++i){
+    arregloFiguras.push(getFigura());
+    escribirADoc(arregloFiguras[i]);
+ }
+//arregloFiguras.forEach(escribirADoc);
 document.write("</table>");
 </script>
 </body>
