@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Geometric</title>
+<style>
+  h1{
+    text-align:center;
+  }
+  table, th, td {
+      border: 1px solid black;
+    text-align:center;
+    margin: 3em auto;
+    width: 58em;
+  }
+
+  th {
+    background-color: #FF99CC;
+  }
+  td {
+    background-color: #CC99ff;
+  }
+
+</style>
+</head>
+
+<body>
+<h2>Geometric</h2>
+<script>
+
+var circulo = {
+    type:"Circle",
+    x : Math.floor(Math.random() * 100),
+    y : Math.floor(Math.random() * 100),
+    r : Math.floor(Math.random() * 100),
+    perimeter: function(){
+
+      return 2*Math.PI * this.r;
+    },
+    area: function(){
+      return this.r*this.r*Math.PI;
+
+    },
+    printPosicion: function(){
+      return "centro("+this.x+","+this.y+") radio:"+"("+this.x+","+this.y+")";
+
+    }
+};
+function crearTriangulo(){
+var triangulo  =  {
+  type: "Triangle",
+  verticeA: {x: Math.floor(Math.random() * 10),y: Math.floor(Math.random() * 10)},
+  verticeB: {x: Math.floor(Math.random() * 10),y: Math.floor(Math.random() * 10)},
+  verticeC: {x: Math.floor(Math.random() * 10),y: Math.floor(Math.random() * 10)},
+  area: function(){
+      var area = this.verticeA.x*this.verticeB.y +this.verticeB.x*this.verticeC.y + this.verticeC.x*this.verticeA.y -
+                  this.verticeA.x*this.verticeC.y -this.verticeC.x*this.verticeB.y-this.verticeB.x*this.verticeA.y;
+      return Math.abs(area/2) ;
+
+  },
+  perimeter: function(){
+    var perimetro = Math.sqrt(Math.pow(this.verticeA.x - this.verticeB.x,2)+Math.pow(this.verticeA.y - this.verticeB.y,2)) +
+                    Math.sqrt(Math.pow(this.verticeA.x - this.verticeC.x,2)+Math.pow(this.verticeA.y - this.verticeC.y,2)) +
+                    Math.sqrt(Math.pow(this.verticeB.x - this.verticeC.x,2)+Math.pow(this.verticeB.y - this.verticeC.y,2));
+
+    return perimetro;
+  },
+  printPosicion : function(){
+    return  "A("+this.verticeA.x+","+this.verticeA.y+") "+"B("+this.verticeB.x+","+this.verticeB.y+") "
+            +"C("+this.verticeC.x+","+this.verticeC.y+")";
+
+  }
+};
+
+return triangulo;
+}
+var triangulo = crearTriangulo();
+var otroTriangulo = crearTriangulo();
+var rectangulo = {
+  type: "Rectangle",
+  topLeft : {
+        x : Math.floor(Math.random() * 100),
+        y : Math.floor(Math.random() * 100)
+  },
+  width: Math.floor(Math.random() * 100),
+  height: Math.floor(Math.random() * 100),
+  perimeter : function(){
+      return 2*(this.width + this.height);
+  },
+
+  area : function(){
+      return this.width*this.height;
+  },
+
+  printPosicion : function(){
+      return  "width: " + this.width + " height: "+ this.height+ "top-left ("+ this.topLeft.x+
+      ","+this.topLeft.y+")";
+  }
+};
+document.write("<table><tr><th>Figura</th><th>Dimensiones</th><th>Perímetro</th> <th>Área</th></tr>");
+var trianguloRow2 = "<tr><td>Triangulo</td><td>" +otroTriangulo.printPosicion() +"</td>"+
+                                        "<td>" + otroTriangulo.perimeter() + "</td>" + "<td>" + otroTriangulo.area() + "</td></tr>";
+var circuloRow = "<tr> <td> Circulo </td> <td>" + circulo.printPosicion() + "</td><td>"+
+                    circulo.perimeter()+"</td><td>"+circulo.area()+"</td></tr>";
+var rectanguloRow = "<tr><td>Rectangulo</td><td>" +rectangulo.printPosicion() +"</td>"+
+                    "<td>" + rectangulo.perimeter() + "</td>" + "<td>" + rectangulo.area() + "</td></tr>";
+
+document.write("<tr><td>Triangulo</td><td>",triangulo.printPosicion(),"</td><td>",triangulo.perimeter(),
+                "</td><td>",triangulo.area(),"</td></tr>");
+document.write(trianguloRow2);
+document.write(circuloRow);
+document.write(rectanguloRow);
+document.write("</table>");
+</script>
+</body>
+
+</html>
