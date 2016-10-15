@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INVENTORY JSON</title>
+<style>
+  h1{
+    text-align:center;
+  }
+
+div{
+  border: 1px dashed black;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.Good {
+  background-color: green;
+}
+
+.Damaged {
+  background-color: red;
+
+}
+.Defective{
+  background-color: yellow;
+
+}
+</style>
+</head>
+
+<body>
+<h2>Inventory JSON</h2>
+<script>
+var responsibles = [
+    {
+      "name": "Gabriela Barrantes",
+      "id": "1-0987-0123",
+      "email": "gbarrantes@ecci.edu",
+      "job": "",
+      "phone": ""
+    },
+    {
+      "name": "Oscar Porras",
+      "id": "2-0981-0973",
+      "email": "",
+      "job": "",
+
+      "phone": ""
+    },
+    {
+      "name": "Alexis Acuña",
+      "id": "7-",
+      "email": "",
+      "job": "",
+      "phone": ""
+    },
+    {
+      "name": "Jose Alfaro",
+      "id": "",
+      "email": "",
+      "job": "",
+      "phone": ""
+    },
+    {
+
+      "name": "Luis Loria",
+      "id": "",
+      "email": "",
+      "job": "",
+      "phone": ""
+    }
+];
+
+
+ var inventary = {
+	"name": "Inventory_ECCI",
+	"assets": [
+		{
+			"name": "Edificio ECCI",
+			"characteristics": {
+				"type": "Fixed",
+				"condition": "Good",
+				"status": "Functioning",
+				"details": ""
+			},
+			"responsible": [
+				0
+			],
+			"assets": [
+				{
+					"name": "CLASSROOM IF305",
+					"characteristics": {
+						"type": "Fixed",
+						"condition": "Defective",
+						"status": "Functioning",
+						"details": "Tres goteras"
+					},
+					"responsible": [
+						1
+					],
+					"assets": [
+						{
+							"name": "Video Beam VB78082",
+							"characteristics": {
+								"type": "Circulating",
+								"condition": "Good",
+								"status": "Functioning",
+								"details": ""
+							},
+							"responsible": [
+								1
+							],
+							"assets": []
+						},
+						{
+							"name": "Desk ET130711",
+							"characteristics": {
+								"type": "Circulating",
+								"condition": "Damaged",
+								"status": "Idle",
+								"details": "Daniado por goteras"
+							},
+							"responsible": [
+								1
+							],
+							"assets": []
+						}
+					]
+				},
+				{
+					"name": "LAB IF104",
+					"characteristics": {
+						"type": "Fixed",
+						"condition": "Good",
+						"status": "Functioning",
+						"details": ""
+					},
+					"responsible": [
+						3
+					],
+					"assets": [
+						{
+							"name": "Video Beam VB54403",
+							"characteristics": {
+								"type": "Circulating",
+								"condition": "Good",
+								"status": "Functioning",
+								"details": ""
+							},
+							"responsible": [
+								4,
+								3
+							],
+							"assets": []
+						},
+						{
+							"name": "Computer HP03028",
+							"characteristics": {
+								"type": "Circulating",
+								"condition": "Good",
+								"status": "Functioning",
+								"details": ""
+							},
+							"responsible": [
+								4,
+								3
+							],
+							"assets": [
+								{
+									"name": "Disco DUro WD213001",
+									"characteristics": {
+										"type": "Circulating",
+										"condition": "Damaged",
+										"status": "Idle",
+										"details": ""
+									},
+									"responsible": [
+										4,
+										3
+									],
+									"assets": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+};
+function printAssets(recursiveAssets)
+	{
+		if(recursiveAssets.assets.length == 0)
+		{
+			document.write('</div>');
+			return;
+		}
+		else
+		{
+			for(var j = 0; j < recursiveAssets.assets.length; ++j)
+			{
+        var classString = " class = '"+ recursiveAssets.assets[j].characteristics.type+" " +
+                             recursiveAssets.assets[j].characteristics.condition + " " +
+                             recursiveAssets.assets[j].characteristics.status+"'";
+				document.write('<div ' + classString+ '>' +recursiveAssets.assets[j].name + '<br/>');
+				printAssets(recursiveAssets.assets[j]);
+			}
+
+			document.write('</div>');
+
+		}
+
+	}
+
+  printAssets(inventary);
+</script>
+</table>
+</body>
+
+</html>
