@@ -1,4 +1,14 @@
 function genSpecialValue() { return Math.random() < 0.5 ? null : undefined; }
+var methods = {
+  'specialValue':genSpecialValue,
+  'boolean': genBoolean,
+  'number':genNumber,
+  'string':genString,
+  'function':genFunction,
+  'object':genObject,
+  'array': genArray
+};
+
 function genRandomValue() {
     var arrayMethods = ["specialValue","boolean","number","string","function","object","array"];
     var indice =Math.floor (Math.random() * 7);
@@ -13,12 +23,12 @@ function genString() {return (Math.random()+1).toString(36).substring(2); }
 function genFunction() {
   return function(){
       return "Soy una funcion";
-    }.toString();
+    };
 }
 
 function genObject() {
   var myObject = {};
-  var n = 100;//Math.floor(Math.random()*100);
+  var n = Math.floor(Math.random()*100);
 
   for(var i = 0; i < n ; ++i){
     myObject[genString()] = genRandomValue();
@@ -37,19 +47,22 @@ function genArray() {
   return arr;
  }
 
-
-var methods = {
-  'specialValue':genSpecialValue,
-  'boolean': genBoolean,
-  'number':genNumber,
-  'string':genString,
-  'function':genFunction,
-  'object':genObject,
-  'array': genArray
-};
-
 genObject();
 
-function escribir(tipo){
+function escribirEnDocumento(tipo){
+  if(tipo.constructor == Object){
+    imprimirObjeto(tipo);
+  }else{
+    imprimirEnDoc(tipo);
+  }
 
+
+}
+
+function imprimirObjeto(tipo){
+    
+
+}
+function imprimirEnDoc(tipo){
+  document.write(tipo.toString());
 }
