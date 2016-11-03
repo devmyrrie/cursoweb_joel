@@ -55,12 +55,44 @@ function escribirEnDocumento(tipo){
   }else{
     imprimirEnDoc(tipo);
   }
-
-
 }
 
-function imprimirObjeto(tipo){
-    
+
+function printWS(nivel){
+  var string = "";
+        for(var i = 0 ; i < nivel; ++i){
+            string += "\t";
+        }
+  return string;
+}
+function imprimirObjecto(tipo){
+  var tipo = {
+      "name": "Inventory_ECCI",
+      "assets": [{
+          "name": "Edificio ECCI",
+          "characteristics": {
+              "type": "Fixed",
+              "condition": "Good",
+              "status": "Functioning",
+              "details": ""
+          }
+        }]
+  };
+    document.write(imprimirObjetoR(tipo,0));
+}
+function imprimirObjetoR(obj, nivel,str){
+  for(var i in obj){
+    str += printWS (nivel) + i + ":";
+    if(obj[i].constructor === Object){
+      str += "{\n";
+      str += imprimirObjetoR(obj[i],nivel+1,str);
+      str += printWS (nivel) + "}\n"
+    }else{
+      str += obj[i].toString()+"\n";
+    }
+  }
+}
+return str;
 
 }
 function imprimirEnDoc(tipo){
