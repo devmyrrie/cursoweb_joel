@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta charset="utf-8"/>
+   <title>Texto animado</title>
+   <style type="text/css">
+      body { margin: 0; background: #ccc; color: #c8c8c8; font-size: 3em; }
+      #text { position: absolute; top: 2em; text-shadow: 1px 1px white, -1px -1px #444; }
+   </style>
+</head>
+
+<body>
+   <div id="text" onclick="toggleAnimation()">Su nombre aquí</div>
+   <script>
+      'use strict';
+      var timer = 0;
+      var textLeft = 0;
+      var stopped = false;
+      function toggleAnimation(){
+        stopped = !stopped;
+          var res =  stopped ? start() : stop();
+      }
+
+      function stop(){
+        window.clearInterval(timer);
+
+      }
+
+      function start()
+      {
+          timer = window.setInterval( 'animateText()', 50 );
+
+      }
+
+      function animateText() {
+        textLeft += 5;
+        if ( textLeft > 320 ) textLeft = -320;
+        var element = document.getElementById('text');
+        element.style.left = Math.abs(textLeft) + 'px';
+
+      }
+   </script>
+</body>
+</html>
