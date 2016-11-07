@@ -13,13 +13,16 @@
    <script>
       'use strict';
       var timer = 0;
+      var width = window.innerWidth - document.getElementById("text").offsetWidth;
       var textLeft = 0;
       var stopped = false;
       function toggleAnimation(){
         stopped = !stopped;
           var res =  stopped ? start() : stop();
       }
-
+      window.addEventListener('resize', function(event){
+         width = window.innerWidth - document.getElementById("text").offsetWidth;
+      });
       function stop(){
         window.clearInterval(timer);
 
@@ -33,7 +36,7 @@
 
       function animateText() {
         textLeft += 5;
-        if ( textLeft > 320 ) textLeft = -320;
+        if ( textLeft > width ) textLeft = -width;
         var element = document.getElementById('text');
         element.style.left = Math.abs(textLeft) + 'px';
 
