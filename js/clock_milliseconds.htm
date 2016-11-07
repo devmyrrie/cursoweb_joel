@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Digital clock</title>
+   <style type="text/css">
+      body { background: black; margin: 4cm 0; text-align: center; }
+      #clock { font-size: 6em; color: #151520; text-shadow: 2px 2px 7px lightgray; }
+   </style>
+</head>
+
+<body>
+   <div id="clock">HH:MM:SS</div>
+   <script>
+      'use strict';
+      window.setInterval( 'updateClock()', 1000/4 );
+      function msToTime(duration) {
+    var milliseconds = parseInt((duration%1000)/100)
+        , seconds = parseInt((duration/1000)%60)
+        , minutes = parseInt((duration/(1000*60))%60)
+        , hours = parseInt((duration/(1000*60*60))%24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+    }
+
+      function updateClock()
+      {
+         var date = new Date();
+         document.getElementById('clock').innerHTML = msToTime(date);
+      }
+   </script>
+</body
+>
+</html>
