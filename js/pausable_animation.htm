@@ -9,12 +9,14 @@
 </head>
 
 <body>
-   <div id="text" onclick="toggleAnimation()">Su nombre aquí</div>
+   <div id="text" onclick="toggleAnimation()"> <img src = "https://pbs.twimg.com/profile_images/2585954566/8ev9krfvkxb8nz00cg77_400x400.jpeg"/></div>
    <script>
       'use strict';
       var timer = 0;
       var width = window.innerWidth - document.getElementById("text").offsetWidth;
+      var height = window.innerHeight - document.getElementById("text").offsetHeight;
       var textLeft = 0;
+      var textDown = 0;
       var stopped = false;
       function toggleAnimation(){
         stopped = !stopped;
@@ -31,15 +33,31 @@
 
       function start()
       {
-          timer = window.setInterval( 'animateText()', 50 );
+          timer = window.setInterval( 'animateText()', 1/30 );
 
       }
 
       function animateText() {
-        textLeft += 5;
+        var rnd = Math.random() ;
+        if(rnd < 0.4){
+            textLeft += 5;
+        }else{
+
+          if(rnd <0.6){
+            textDown += 5;
+
+          }else{
+            textLeft += 5;
+            textDown += 5;
+
+          }
+        }
+
         if ( textLeft > width ) textLeft = -width;
+        if ( textDown > height ) textDown = -height;
         var element = document.getElementById('text');
         element.style.left = Math.abs(textLeft) + 'px';
+        element.style.top = Math.abs(textDown) + 'px';
 
       }
    </script>
