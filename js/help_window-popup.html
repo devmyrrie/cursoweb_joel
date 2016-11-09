@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Window Dump</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            margin: 3em auto;
+            width: 58em;
+        }
+        #DIVbtn {
+            text-align: center;
+        }
+        th {
+            background-color: #FF99CC;
+        }
+        td {
+            background-color: #CC99ff;
+        }
+    </style>
+</head>
+<button id="helpButton" onclick="toggleHelp()">Ayuda</button>
+
+<body>
+
+    <script>
+        var helpWindow = null;
+        var subDoc = null;
+        var table, table2,  table3 = null;
+        function toggleHelp() {
+            if (helpWindow) {
+                helpWindow.close();
+                helpWindow = null;
+                document.getElementById('helpButton').innerHTML = 'Ayuda';
+            } else {
+                helpWindow = window.open();
+                subDoc = helpWindow.document;
+                subDoc.open();
+                var str = '<style>h1{text-align:center;}table, th, td {border: 1px solid black;'+
+              			'text-align:center; margin: 3em auto;width: 58em;	}#DIVbtn{text-align: center;'+
+                    ' }th {background-color: #FF99CC;	}td {background-color: #CC99ff;}</style>'+
+                    '<section id="windowsDump">' +
+                    '<div id ="DIVbtn"><button id="btn" onclick= "actualizar()" >Actualizar</button></div>' +
+                    '<h1>Window</h1>   <table id="table3">  <tr><th>Propiedad</th><th>Valor</th></tr>' +
+                    '</table> <h1>Navigator</h1> <table id="table"><tr><th>Propiedad</th><th>Valor</th></tr>' +
+                    '</table><h1>Screen</h1><table id="table2"><tr><th>Propiedad</th><th>Valor</th></tr>' +
+                    '</table></section>';
+                subDoc.write(str);
+                 table = helpWindow.document.getElementById("table");
+                 table2 = helpWindow.document.getElementById("table2");
+                 table3 = helpWindow.document.getElementById("table3");
+                subDoc.close();
+                actualizar(helpWindow);
+                document.getElementById('helpButton').innerHTML = 'Cerrar ayuda';
+            }
+        }
+
+
+
+
+        function actualizar(aWindow) {
+            clear(aWindow);
+            screen_(aWindow);
+            navigator_(aWindow);
+            window_(aWindow);
+        }
+
+        function screen_(aWindow) {
+            var scr = aWindow.screen;
+            for (var prop in scr) {
+                str = "<tr> <td>" + prop + "</td><td>" + scr[prop] + "</td></tr>";
+                table2.innerHTML += str;
+            }
+
+        }
+
+        function navigator_(aWindow) {
+            var nav = aWindow.navigator;
+
+            for (var prop in nav) {
+                str = "<tr> <td>" + prop + "</td><td>" + nav[prop] + "</td></tr>";
+                table.innerHTML += str;
+            }
+
+
+        }
+
+        function window_(aWindow) {
+            var wnd = aWindow;
+
+            for (var prop in wnd) {
+                str = "<tr> <td>" + prop + "</td><td>" + wnd[prop] + "</td></tr>";
+                table3.innerHTML += str;
+            }
+
+        }
+
+        function clear() {
+            table2.innerHTML = "";
+            table3.innerHTML = "";
+            table.inneHTML = "";
+        }
+    </script>
+</body>
