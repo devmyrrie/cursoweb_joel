@@ -24,6 +24,7 @@ function Style(){
                 "<style> * { color : pink} </style>",
                 "<style> * { font-size : 1.3em} </style>",
                 "<style> * { weight : 1em} </style>"];
+                
   this.style_ = this.styles[Math.floor(Math.random()*4)];
 }
 Style.prototype.print = function () {
