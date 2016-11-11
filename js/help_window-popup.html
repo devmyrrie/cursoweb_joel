@@ -34,13 +34,28 @@
         var helpWindow = null;
         var subDoc = null;
         var table, table2,  table3 = null;
+        var totalWidth = window.screenX;
+        var totalHeight = window.screenY;
+        var windowHeight = null;
+        var windowWidth = null;
+
+
         function toggleHelp() {
             if (helpWindow) {
                 helpWindow.close();
                 helpWindow = null;
                 document.getElementById('helpButton').innerHTML = 'Ayuda';
             } else {
-                helpWindow = window.open();
+                var posX = 0;
+                var posY = 0;
+                if(totalWidth < 0 || totalHeight < 0){
+
+                  posX = (outerWidth/2)+outerWidth;
+                  posY = (outerHeight/2)+outerHeight;
+
+                }
+                var str = 'width='+posX+',height='+posY;
+                helpWindow = window.open('','',str);
                 subDoc = helpWindow.document;
                 subDoc.open();
                 var str = '<style>h1{text-align:center;}table, th, td {border: 1px solid black;'+
@@ -59,6 +74,7 @@
                 subDoc.close();
                 actualizar(helpWindow);
                 document.getElementById('helpButton').innerHTML = 'Cerrar ayuda';
+
             }
         }
 
